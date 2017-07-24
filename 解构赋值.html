@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	// 解构赋值
+	// 
+	// 数组的解构赋值
+	{
+		let [a, b, c]  = [1, 2, 3]
+		console.log(a, b, c); // 1 2 3
+	
+	}
+
+	{
+		let [foo = true] = []; //有默认值
+		console.log(foo) // true
+	}
+	
+	//对象的解构
+	
+	{
+		let {foo, bar} = {foo: 'p', bar: 'jy'}
+		console.log(foo + bar);
+	}
+	
+
+	{
+		({foo} = {foo: 'p'})
+		console.log(foo);
+	}
+
+	{
+		let [a,b,c,d,e] = 'panjunyu'
+		console.log(a,b,c,d,e)
+	}
+
+
+
+
+</script>
+</body>
+</html>

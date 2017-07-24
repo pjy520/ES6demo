@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var state = 1;
+		var promise = new Promise( (resolve, reject) => {
+			console.log('准备做饭')
+			if(state == 1) {
+				resolve('做饭完成')
+			} else{
+				reject('做饭失败')
+			}
+		}).then( (res) => {
+			console.log(res);
+			return new Promise( (resolve, reject) => {
+				console.log('准备吃饭');
+				if(state == 1) {
+					resolve('吃饭完成')
+				}
+			})
+		}).then( (res) => {
+			console.log(res)
+			return new Promise( (resolve, reject) => {
+				console.log('准备洗碗');
+				if(state == 1) {
+					resolve('洗碗完成')
+				} 
+			})
+		}).then( (res) => {
+			console.log(res);
+		})
+	</script>
+</body>
+</html>

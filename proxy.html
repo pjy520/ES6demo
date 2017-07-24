@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	// proxy 代理ES6  增强 对象和函数  生命周期 预处理
+	
+	let obj = {
+		add(val){
+			return val += 100
+		},
+		name: 'pjy'
+	}
+	
+	// console.log(obj.add(100));
+	// console.log(obj.name);
+
+	let pro = new Proxy({
+		add(val){
+			return val += 100
+		},
+		name: 'pjy'
+	}, {
+		// 预处理机制
+		// get set apply
+		get(target, key, property){
+			console.log('come in get');
+			return target[key];
+		}
+	});
+
+	console.log(pro.name)
+
+</script>
+</body>
+</html>

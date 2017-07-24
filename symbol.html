@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	//symbol
+	//新增的数据类型
+	//之前的5中数据类型 Number, Boolean, String, Null, Object, Undefined
+	//
+	
+	let a = Symbol();
+	console.log(typeof(a));  //symbol
+	
+	let obj = {
+		name: 'pjy',
+		skill: 'web'
+	}
+	let age = Symbol();
+	obj[age] = 18;
+	console.log(obj);
+
+	for( let k in obj) {
+		console.log(obj[k]); // 循环输出对age进行保护
+	}
+	console.log(obj[age]); // 18
+	
+
+
+
+</script>
+</body>
+</html>

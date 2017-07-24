@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	//map
+	//map 比set更加广泛, 非常的灵活
+	let json = {
+		name: 'pjy',
+		skill : 'js'
+	}
+	console.log(json.name);
+
+	let map = new Map();  
+	map.set(json, 'iam');
+	console.log(map); //{Object {name: "pjy", skill: "js"} => "iam"}  key value 的形式
+	map.set('js', json);
+	console.log(map); // {Object {name: "pjy", skill: "js"} => "iam", "js" => Object {name: "pjy", skill: "js"}}
+
+	//增删改查
+	//set, get, delete, size, has, clear 
+
+
+</script>
+</body>
+</html>
