@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	let target = function(){
+		return 'i am jspan'
+	}
+	let handle = {
+		apply(target, ctx, args) {
+			console.log('do apply')
+			return Reflect.apply(...arguments)
+		}
+	}
+	let pro = new Proxy(target, handle);
+
+	console.log(pro());
+</script>
+</body>
+</html>

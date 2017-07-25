@@ -29,10 +29,18 @@
 		get(target, key, property){
 			console.log('come in get');
 			return target[key];
-		}
+		},
+		set(target, key, value, receiver){
+			console.log(`setting ${key} = ${value}`);
+			return target[key] = value;
+		},
+		
 	});
 
 	console.log(pro.name)
+
+	
+
 
 </script>
 </body>
