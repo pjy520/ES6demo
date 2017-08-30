@@ -5,85 +5,28 @@
 	<title>Document</title>
 </head>
 <body>
-<script>
-	function foo(...arg){
-		console.log(arg);
-	}
-	foo(1,2,3,4)
-
-	let arr = [1,2,3,4];
-	let arr2 = [...arr];
-	console.log(arr2);
-
-	// rest 运算符
-	function fn(a,...arg){
-		console.log(arg) //3
-	}
-	fn(1,2,3,4);
-
-
-	// 字符串模板
-	// let string = `  ${ }  `
-	//字符串搜索  
-	// string.includes();
-	// string.startsWidth();
-	// string.endsWidth();
-
-	//数组操作
-	let json = {
-		'0' : 'a',
-		'1' : 'b',
-		'2' : 'c',
-		length : 3
-	}
-	let arr3 = Array.from(json);
-	console.log( arr3);
-
-	//array of 方法
-	{
-		let arr = Array.of(1,2,3,4);
-		console.log(arr);
-	}
-	
-	{
-		//in来判断 数组或者对象中是否存在
-		let obj = {
-			a : '我是a',
-			b : '我是b'
-		};
-		console.log('a' in obj) //true
-
-
-		let arr = [1,2,3,4];
-		console.log(0 in arr) //true  用来判断数组是否为空数组
-	}
-
-
-	{
-		//构建对象
-		let key = 'skill';
-		let obj = {
-			[key] : 'value'
+	<script>
+		var obj = {
+			// get a(){
+			// 	return this.b;
+			// },
+			// set a(val){
+			// 	this.b = val;
+			// 	return this.b;
+			// }
 		}
-	}
+		Object.defineProperty(obj, 'a', {
+			get(){
+				return this._a
+			},
+			set(val){
+				this._a = val;
+				return this._a
+			}
+		})
+		obj.a = 2;
+		console.log(obj.a);
 
-
-	{
-		Object.is(+0, -0) //false
-		Object.is(NaN, NaN) // true   严格相等
-
-		let a = {'aa':'aa'};
-		let b = {'bb':'bb'};
-		let c = {'cc':'cc'}
-
-		console.log(Object.assign(a,b,c)); // 合并对象
-	}
-	
-
-
-
-
-
-</script>
+	</script>
 </body>
 </html>
